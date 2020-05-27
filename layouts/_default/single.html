@@ -5,7 +5,12 @@
   <div class="post-meta">
       {{ if .Params.Date }}
     <span class="post-date">
-      {{ .Date.Format "2006-01-02" }}
+      {{ .Date.Format "Jan 2, 2006" }}
+    </span>
+    {{ end }}
+      {{ if .Params.readingTime }}
+    <span class="post-readingTime">
+      <span class="separator-dot">.</span> {{ .Params.readingTime }}
     </span>
     {{ end }}
     {{ with .Params.Author }}
@@ -41,4 +46,5 @@
 
   {{ partial "comments.html" . }}
 </div>
+
 {{ end }}
